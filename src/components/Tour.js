@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
-export const Tour = ({ tours }) => {
-  const {image, name, info, price } = tours;
+export const Tour = ({ tours,deleteTours}) => {
+  const {id,image, name, info, price } = tours;
   //Readmore toggle
   const [readmore, setReadmore] = useState(false);
   return (
@@ -21,7 +21,7 @@ export const Tour = ({ tours }) => {
         </h3>
       </div>
       <div className="card-item">
-        <button className="btn btn-danger">Delete Tour</button>
+        <button className="btn btn-danger" onClick={()=>deleteTours(id)}>Delete Tour</button>
       </div>
     </div>
   );

@@ -7,7 +7,11 @@ function App() {
   const url = `https://course-api.com/react-tours-project`;
   const [loading, setLoading] = useState(true);
   const [tours, setTours] = useState([]);
-
+  //Delete tours
+  const deleteTours=(id)=>{
+    const newTour=tours.filter((tour)=>tour.id!==id);
+    setTours(newTour);
+  }
   //Get Api date
   const getTours = async () => {
     try {
@@ -31,7 +35,7 @@ function App() {
   return (
     <div className="cards">
       {tours.map((tours) => {
-        return <Tour tours={tours} key={tours.id}/>;
+        return <Tour tours={tours} key={tours.id} deleteTours={deleteTours}/>;
       })}
     </div>
   );
