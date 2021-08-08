@@ -29,7 +29,7 @@ function App() {
     return <Loading />;
   }
   return (
-    <div className className="cards">
+    <div className="cards">
       {tours.map((tours) => {
         return <Tour tours={tours} key={tours.id}/>;
       })}
